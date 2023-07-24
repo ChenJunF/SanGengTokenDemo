@@ -1,0 +1,27 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sangeng.mapper.HaierMapper">
+
+    <update id="updateBatchBy">
+        update
+            t_haier_copy1
+        set
+            type = 1
+        where
+            id in <foreach collection="list" item="item" index="index" open="(" separator="," close=")">
+            #{item.id}
+        </foreach>
+    </update>
+
+    <update id="updateBatchBy2">
+        <foreach collection="list" item="item" separator=";">
+            update
+                `t_haier_copy1`
+            set
+                `type` = #{item.type}
+            where
+                `id` = #{item.id}
+        </foreach>
+    </update>
+</mapper>

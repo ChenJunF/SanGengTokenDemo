@@ -1,0 +1,22 @@
+spring:
+  datasource:
+    url: jdbc:mysql://1.117.162.30:3306/sg_security?characterEncoding=utf-8&serverTimezone=UT&allowMultiQueries=true
+    username: root
+    password: "!zCECFhgQjX6"
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  redis:
+    database: 0
+    host: 1.117.162.30
+    port: 6379
+    password: "!zCECFhgQjX6"
+server:
+  port: 8081
+
+logging:
+  level:
+    com.sangeng.mapper: debug
+
+
+#    用户名：sangeng
+#    密码：1234
